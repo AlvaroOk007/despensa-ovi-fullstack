@@ -10,7 +10,7 @@ export const createProduct = async (body) => {
     const data = await res.json();
     return data;
   } catch (error) {
-    console.log(error);
+    return error;
   }
   
 };

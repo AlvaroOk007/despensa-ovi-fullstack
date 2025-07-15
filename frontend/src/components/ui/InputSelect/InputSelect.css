@@ -10,3 +10,17 @@
     color: var(--color-black);
   }
 }
+
+.input-field-container{
+  display: flex;
+  flex-direction: column;
+  & .error-message{
+    color: red !important;
+    font-size: calc(10px + 0.1vw) !important;
+    margin-top: 0.5rem !important;
+  }
+}
+
+.border-error{
+  border-color: red !important;
+}

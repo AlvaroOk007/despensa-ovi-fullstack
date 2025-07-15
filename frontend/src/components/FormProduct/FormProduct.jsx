@@ -33,17 +33,27 @@ export function FormProduct({
         stock: 0,
         CategoryId: 0,
       };
+  // Datos de errores
+  const [errorsForm, setErrorsForm] = useState();
   // Estado de datos del formulario
   const [dataForm, setDataForm] = useState(initialData)
 
   // Envio de formulario
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    const errors = validateForm(dataForm);
+    let errors = validateForm(dataForm);
     if (Object.keys(errors).length > 0) {
-      alert('errores krnal');
+      setErrorsForm(errors)
     } else {
-      createProduct(dataForm)
+      console.log('no hay errores');
+      let res = await createProduct(dataForm)
+      if(res.error){
+        alert('Error al crear el producto');
+      }else{
+        alert('Producto creado correctamente');
+        setShowForm(false);
+        setDataFormEdit(null);
+      }
     }
   };
   // Actualizacion de estados
@@ -80,6 +90,7 @@ export function FormProduct({
               type={'text'}
               placeholder='Nombre del producto'
               name='name'
+              error={errorsForm?.name}
             />
             <InputField
               handleChange={handleChange}
@@ -87,6 +98,7 @@ export function FormProduct({
               type={'text'}
               placeholder='Descripcion del producto'
               name='description'
+              error={errorsForm?.description}
             />
           </div>
           <div className='form-row'>
@@ -96,6 +108,7 @@ export function FormProduct({
               type={'text'}
               placeholder='Marca del producto'
               name='brand'
+              error={errorsForm?.brand}
             />
             <InputField
               handleChange={handleChange}
@@ -103,6 +116,7 @@ export function FormProduct({
               type={'number'}
               placeholder='Precio  unitario'
               name='price'
+              error={errorsForm?.price}
             />
           </div>
           <div className='form-row'>
@@ -112,6 +126,7 @@ export function FormProduct({
               type={'number'}
               placeholder='Stock del producto'
               name='stock'
+              error={errorsForm?.stock}
             />
             <InputSelect
               name='CategoryId'
@@ -120,6 +135,7 @@ export function FormProduct({
               label='Seleccione una categoria'
               value={dataForm.CategoryId}
               disabled={loading}
+              error={errorsForm?.category}
             />
           </div>
           <div className='form-row btns-form'>
