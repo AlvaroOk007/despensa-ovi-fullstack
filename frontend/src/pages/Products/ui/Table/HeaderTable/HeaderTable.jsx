@@ -7,7 +7,7 @@ export function HeaderTable() {
       <tr>
         <th className='container-item-table'>
           <div className='item-table'>
-            Codigo <ArrowDownUp className='item-table-icon' name='id'/>
+            Código <ArrowDownUp className='item-table-icon' name='id'/>
           </div>
         </th>
         <th className='container-item-table'>
@@ -37,7 +37,7 @@ export function HeaderTable() {
         </th>
         <th className='container-item-table'>
           <div className='item-table'>
-            Accion
+            Acción
           </div>
         </th>
       </tr>

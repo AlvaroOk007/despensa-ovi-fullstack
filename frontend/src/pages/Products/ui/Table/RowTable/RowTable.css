@@ -1,3 +1,9 @@
+.table-body tr td:first-child{
+  border-radius: 10px 0 0 10px !important;
+}
+.table-body tr td:last-child{
+  border-radius: 0 10px 10px 0 !important;
+}
 .table-body tr td{
   text-align: center;
   padding: 2rem 0 !important;
@@ -26,7 +32,6 @@
   justify-content: center;
   align-items: center;
   gap: 1rem;
-  border-radius: 0 10px 10px 0 !important;
   overflow: hidden;
 }
 .contariner-btn{

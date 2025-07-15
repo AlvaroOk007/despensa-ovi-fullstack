@@ -8,3 +8,8 @@
 body{
   background-color: var(--color-bg);
 }
+button:active,
+.link:active{
+  transform: scale(0.98);
+  transition: all ease .2s;
+}

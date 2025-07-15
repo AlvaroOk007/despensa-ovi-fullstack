@@ -3,7 +3,7 @@ import { Pencil, Trash } from 'lucide-react';
 export function RowTable({ product,handleClickEdit }) {
   return (
     <tr>
-      <td style={{ borderRadius: '10px 0 0 10px' }}>{product.id}</td>
+      <td >{product.id}</td>
       <td>{product.name}</td>
       <td>${product.price}</td>
       <td>{product.stock}</td>
