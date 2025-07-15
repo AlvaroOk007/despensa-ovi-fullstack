@@ -1,0 +1,12 @@
+
+.input-select-container{
+  height: 3rem;
+  margin: 0;
+  padding: 0 1rem;
+  border-radius: 10px;
+  color: var(--color-text-semi-white);
+  border-color: var(--color-text-semi-white);
+  &:focus{
+    color: var(--color-black);
+  }
+}

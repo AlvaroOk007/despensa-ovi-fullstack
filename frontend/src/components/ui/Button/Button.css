@@ -1,0 +1,12 @@
+.btn-add-product{
+  padding: 1rem 3rem;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--color-primary);
+  cursor: pointer;
+  transition: all ease .2s;
+  &:hover{
+    background-color: var(--color-secondary);
+  }
+}

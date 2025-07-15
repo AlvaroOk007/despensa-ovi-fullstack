@@ -1,0 +1,48 @@
+.conteiner-statistic-card{
+  min-width: 15rem;
+  background-color: rgb(182, 174, 99);
+  height: 10rem;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  transition: all ease .2s;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.11);
+  cursor: pointer;
+  text-decoration: none !important;
+  &:hover{
+    transform: scale(1.1);
+  }
+}
+.links{
+  text-decoration: none;
+  flex: 1;
+
+}
+.statistic-carda-title{
+  text-decoration: none !important;
+  font-size: calc(20px + 2vw);
+  font-weight: 600;
+  color: var(--color-text-white);
+  z-index: 2;
+  
+}
+.statistic-carda-subtitle{
+  text-decoration: none !important;
+  font-size: calc(12px + 0.1vw);
+  font-weight: 400;
+  color: var(--color-text-white);
+  z-index: 2;
+}
+
+
+.statistic-card-icon{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  transform: translateX(40%);
+  opacity: 0.1;
+}

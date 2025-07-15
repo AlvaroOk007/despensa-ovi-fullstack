@@ -1,0 +1,50 @@
+.table-body tr td{
+  text-align: center;
+  padding: 2rem 0 !important;
+}
+
+.table-body tr{
+  height: 4rem;
+  padding: 0;
+  background-color: var(--color-bg-white);
+  transition: all ease .2s;
+  &:hover td{
+    transform: scale(1.06);
+    background-color: var(--color-primary);
+  }
+  &:hover *{
+    transform: scale(1.06);
+    color: var(--color-bg-white);
+  }
+}
+
+/* Bnts */
+.btns-accion{
+  text-align: right;
+  display: flex;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  border-radius: 0 10px 10px 0 !important;
+  overflow: hidden;
+}
+.contariner-btn{
+  padding:2px  5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all ease .2s;
+  &:hover{
+    background-color: var(--color-secondary) !important;
+  }
+}
+.btn-action{
+  cursor: pointer;
+  width: 17px;
+  color: var(--color-primary);
+  transition: all ease .2s;
+  &:hover{
+    background-color: rgba(71, 71, 71, 0) !important;
+  }
+}

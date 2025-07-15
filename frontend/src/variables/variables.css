@@ -1,0 +1,10 @@
+:root {
+  /* Modo claro */
+  --color-bg-white: white;
+  --color-bg: #F8F8F8;
+  --color-text-white: #ffff;
+  --color-text-semi-white: #E5E5E5;
+  --color-text-black: #0000;
+  --color-primary: #0A5F82;
+  --color-secondary: #066993;
+}

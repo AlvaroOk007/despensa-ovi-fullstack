@@ -1,0 +1,17 @@
+.table-container-header{
+  text-align: center;
+}
+.container-item-table .item-table{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  & .item-table-icon{
+    width: 15px;
+    cursor: pointer;
+    &:hover{
+      color: var(--color-primary);
+      transform: scale(1.1);
+    }
+  }
+}
