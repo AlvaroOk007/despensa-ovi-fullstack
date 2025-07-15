@@ -2,7 +2,9 @@ import './ModalConfirmation.css';
 import { useEffect } from 'react';
 import { Button } from '../Button/Button'
 import { deleteProduct} from '../../../services/deleteProduct.js'
+import { useFetchProducts } from '../../../hooks/useFetchProducts.jsx';
 export function ModalConfirmation({ setModalConfirmation, idDelete, toastRef }) {
+  const { getProducts } = useFetchProducts() 
   // Evitar scroll cuando se muestre el formuulario
   useEffect(() => {
     document.body.style.overflow = 'hidden'; // bloquea el scroll
@@ -24,6 +26,7 @@ export function ModalConfirmation({ setModalConfirmation, idDelete, toastRef }) 
       setTimeout(()=>{
         setModalConfirmation(false)
       }, 3000)
+      getProducts()
     }else if (res?.data ===0){
       toastRef?.current?.show({
         severity: 'warn',

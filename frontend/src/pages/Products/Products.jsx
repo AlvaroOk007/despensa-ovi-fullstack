@@ -13,7 +13,10 @@ export function Products() {
   // Toast
   const toastRef = useRef(null);
   // Productos
-  const { products, loading, error } = useFetchProducts();
+  const { products, loading, error, getProducts } = useFetchProducts();
+  useEffect(()=>{
+    getProducts()
+  },[])
   const [productsFiltered, setProductsFiltered] = useState(null);
   useEffect(() => {
     if (products) {
@@ -51,9 +54,10 @@ export function Products() {
   return (
     <main className='main-products'>  
       {/*Modal de confimacion de la eliminacion*/}
-      {modalConfirmation && <ModalConfirmation setModalConfirmation = {setModalConfirmation} idDelete = {idDelete} toastRef={toastRef}/> }
+      {modalConfirmation && <ModalConfirmation setModalConfirmation = {setModalConfirmation} idDelete = {idDelete} toastRef={toastRef} getProducts={getProducts}/> }
       {/* Toast */}
-      {showForm || modalConfirmation && <Toast ref={toastRef} /> }
+      {modalConfirmation && <Toast ref={toastRef} /> }
+      {showForm && <Toast ref={toastRef} /> }
       {/* Formulario para agregar o editar un producto */}
       {showForm && (
         <FormProduct
@@ -77,7 +81,7 @@ export function Products() {
       <Separator />
 
       {/* Tabla de productos */}
-      <Table handleClickEdit={handleFormEdit} handleClickDelete = {handleClickDelete}products={productsFiltered} />
+      <Table handleClickEdit={handleFormEdit} handleClickDelete = {handleClickDelete}products={productsFiltered} setProducts={setProductsFiltered}/>
 
       {/* Loader */}
       {loading && <h2>Cargando productos...</h2>}

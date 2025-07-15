@@ -3,12 +3,14 @@ import { validateForm } from '../utils/formValidation';
 import { createProduct } from '../services/createProduct.js';
 import { updateProduct } from '../services/updateProduct.js';
 import { useEffect } from 'react';
+import { useFetchProducts } from './useFetchProducts.jsx';
 export const useFormData = (
   dataFormEdit,
   setShowForm,
   setDataFormEdit,
   toastRef
 ) => {
+  const {getProducts} = useFetchProducts()
   // Evitar scroll cuando se muestre el formuulario
   useEffect(() => {
     document.body.style.overflow = 'hidden'; // bloquea el scroll
@@ -73,6 +75,7 @@ export const useFormData = (
           life: 3000,
         });
         setTimeout(() => {
+          getProducts()
           setShowForm(false);
           setDataFormEdit(null);
         }, 3000);
