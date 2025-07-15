@@ -23,7 +23,7 @@ export function InputSelect({
           </option>
         ))}
       </select>
-      {<p className='error-message'>{error}</p>}
+      {error && <p className='error-message'>{error}</p>}
     </div>
   );
 }
