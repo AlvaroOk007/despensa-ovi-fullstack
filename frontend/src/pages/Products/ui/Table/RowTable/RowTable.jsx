@@ -1,9 +1,6 @@
 import './RowTable.css';
 import { Pencil, Trash } from 'lucide-react';
-export function RowTable({ product,handleClickEdit }) {
-  const handleClickDelete = () => {
-    
-  }
+export function RowTable({ product,handleClickEdit, handleClickDelete }) {
   return (
     <tr>
       <td >{product.id}</td>
