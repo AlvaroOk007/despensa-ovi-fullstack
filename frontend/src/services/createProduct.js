@@ -12,5 +12,4 @@ export const createProduct = async (body) => {
   } catch (error) {
     return error;
   }
-  
 };

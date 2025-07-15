@@ -1,6 +1,9 @@
 import './RowTable.css';
 import { Pencil, Trash } from 'lucide-react';
 export function RowTable({ product,handleClickEdit }) {
+  const handleClickDelete = () => {
+    
+  }
   return (
     <tr>
       <td >{product.id}</td>
@@ -14,7 +17,7 @@ export function RowTable({ product,handleClickEdit }) {
           <Pencil strokeWidth={1.3} className='btn-action' onClick={()=> handleClickEdit(product)}/>
         </div>
         <div className='contariner-btn'>
-          <Trash strokeWidth={1.3} className='btn-action' />
+          <Trash strokeWidth={1.3} className='btn-action' onClick={()=> handleClickDelete(product.id)}/>
         </div>
       </td>
     </tr>

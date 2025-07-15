@@ -4,9 +4,13 @@ import './Products.css';
 import { Table } from './ui/Table/Table';
 import { Search } from './ui/Search/Search';
 import { FormProduct } from '../../components/FormProduct/FormProduct';
-import { useState,useEffect } from 'react';
+import { useState,useEffect, useRef } from 'react';
 import { useFetchProducts } from '../../hooks/useFetchProducts';
+import { Toast } from 'primereact/toast';
+
 export function Products() {
+  // Toast
+  const toastRef = useRef(null);
   // Productos
   const { products, loading, error } = useFetchProducts();
   const [productsFiltered, setProductsFiltered] = useState(null);
@@ -26,19 +30,22 @@ export function Products() {
     setShowForm(true);
     setFormEdit(product);
   };
-
+  
   // Funcion para mostrar formulario
   const handleShowForm = () => {
     setShowForm(!showForm);
   };
   return (
     <main className='main-products'>  
+
+      {showForm && <Toast ref={toastRef} /> }
       {/* Formulario para agregar o editar un producto */}
       {showForm && (
         <FormProduct
           setShowForm={setShowForm}
           dataFormEdit={formEdit}
           setDataFormEdit={setFormEdit}
+          toastRef={toastRef}
         />
       )}
 
